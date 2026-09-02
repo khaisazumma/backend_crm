@@ -52,10 +52,16 @@ async def list_products(
 ) -> list[dict]:
     query = """
         SELECT
+            id,
+            product_type,
+            sku,
             type AS product,
             category,
+            normal_price,
+            discount_price,
             COALESCE(discount_price, normal_price) AS price,
-            stock
+            stock,
+            is_active
         FROM v_products_full
         WHERE 1=1
     """

@@ -10,9 +10,13 @@ async def list_customers(pool: asyncpg.Pool, search: str | None, limit: int, off
             rows = await conn.fetch(
                 """
                 SELECT
+                    id,
                     id_client,
                     nama,
+                    email,
+                    telepon,
                     provinsi,
+                    kabupaten_kota,
                     komoditas,
                     luas_tambak
                 FROM customers
@@ -29,9 +33,13 @@ async def list_customers(pool: asyncpg.Pool, search: str | None, limit: int, off
             rows = await conn.fetch(
                 """
                 SELECT
+                    id,
                     id_client,
                     nama,
+                    email,
+                    telepon,
                     provinsi,
+                    kabupaten_kota,
                     komoditas,
                     luas_tambak
                 FROM customers

@@ -61,8 +61,12 @@ class CustomerOut(BaseModel):
     updated_at: datetime
 
 class CustomerListOut(BaseModel):
+    id: int
     id_client: int
     nama: str
+    email: str | None
+    telepon: str | None
     provinsi: str | None
+    kabupaten_kota: str | None
     komoditas: str | None
     luas_tambak: str | None

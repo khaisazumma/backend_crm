@@ -86,7 +86,13 @@ class ProductOut(BaseModel):
     kincirve_attributes: KincirveAttributes | None = None
 
 class ProductListOut(BaseModel):
+    id: int
+    product_type: ProductType
+    sku: str | None
     product: str | None
     category: str | None
+    normal_price: Decimal
+    discount_price: Decimal | None
     price: Decimal
     stock: int
+    is_active: bool
