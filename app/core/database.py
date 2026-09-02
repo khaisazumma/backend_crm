@@ -16,6 +16,7 @@ async def connect_db() -> None:
         dsn=settings.database_dsn,
         min_size=settings.DB_POOL_MIN_SIZE,
         max_size=settings.DB_POOL_MAX_SIZE,
+        ssl="require" if settings.DB_SSL else None,
     )
 
 
